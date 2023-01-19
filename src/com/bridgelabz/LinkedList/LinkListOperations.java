@@ -11,6 +11,13 @@ public class LinkListOperations {
 		
 		Linkedlist1.display();
 		
+		Integer popData = Linkedlist1.pop();
+		if(popData == null) {
+			System.out.println("Empty linked list.");
+		}else
+			System.out.println("POP First Successfully done.Pop data : " + popData);
+		Linkedlist1.display();
+		
 		System.out.println("*****************************************************\n");
 		
 		LinkedList<Integer> Linkedlist2 = new LinkedList<>();
