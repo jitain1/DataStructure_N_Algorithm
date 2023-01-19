@@ -14,4 +14,8 @@ public class Node<E> {
 		this.data = data;
 	}
 
+	@Override
+	public String toString() {
+		return "[data=" + data + ", next=" + next + "]";
+	}
 }
