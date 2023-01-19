@@ -64,6 +64,10 @@ public class LinkListOperations {
 		Linkedlist4.pushAfter(30, 40);
 		Linkedlist4.display();
 		
+		System.out.println("-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_");
+		Linkedlist4.pop(40);
+		Linkedlist4.size();
+		Linkedlist4.display();
 
 	}
 
