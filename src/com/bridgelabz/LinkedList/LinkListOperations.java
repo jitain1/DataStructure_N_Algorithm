@@ -27,6 +27,13 @@ public class LinkListOperations {
 		Linkedlist2.append(70);
 		
 		Linkedlist2.display();
+		
+		Integer popLastElement = Linkedlist2.popLast();
+		if(popLastElement == null) 
+			System.out.println("Empty linked list.");
+		else
+			System.out.println("POP Last Successfully done.Pop data : " + popLastElement);
+		Linkedlist2.display();
 
 	}
 
