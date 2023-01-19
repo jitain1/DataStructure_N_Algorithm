@@ -34,6 +34,36 @@ public class LinkListOperations {
 		else
 			System.out.println("POP Last Successfully done.Pop data : " + popLastElement);
 		Linkedlist2.display();
+		
+		System.out.println("*****************************************************\n");
+		
+		LinkedList<Integer> Linkedlist3 = new LinkedList<>();
+		
+		Linkedlist3.append(56);
+		Linkedlist3.append(30);
+		Linkedlist3.append(45);
+		Linkedlist3.append(70);
+		Linkedlist3.display();
+		
+		Node<Integer> searchElement = Linkedlist3.search(30);
+		if(searchElement == null)
+			System.out.println("Element not Found.");
+		else {
+			System.out.println("Element Found.");
+			System.out.println(searchElement);
+		}
+		
+		System.out.println("*****************************************************\n");
+		LinkedList<Integer> Linkedlist4 = new LinkedList<>();
+		
+		Linkedlist4.append(56);
+		Linkedlist4.append(30);
+		Linkedlist4.append(70);
+		Linkedlist4.display();
+		
+		Linkedlist4.pushAfter(30, 40);
+		Linkedlist4.display();
+		
 
 	}
 
