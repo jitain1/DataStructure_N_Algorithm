@@ -61,7 +61,7 @@ public class LinkListOperations {
 		Linkedlist4.append(70);
 		Linkedlist4.display();
 		
-		Linkedlist4.pushAfter(30, 40);
+		Linkedlist4.insertAfter(30, 40);
 		Linkedlist4.display();
 		
 		System.out.println("-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_");
