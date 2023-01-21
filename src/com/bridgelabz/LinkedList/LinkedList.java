@@ -78,26 +78,42 @@ public class LinkedList <E> {
 		return null;
 	}
 	 
-/* Insert node in the middle of LinkedList */
-	 void pushAfter(E previous, E data) {
-		 if(head == null) {
-			 System.out.println("Node not found!!!");
-			 return;
-		 }
-		 Node<E> temp = head;
-		 while(temp != null) {
-			 if(temp.data.equals(previous)) {
+	 /* Insert a node after a node */	 
+		public void insertAfter(E searchData, E data) {
+			Node<E> searchedNode = search(searchData);
+			
+			if(searchedNode == null) {
+				System.out.println("Element not Found");
+			}else {
 				Node<E> newNode = new Node(data);
-				Node<E> nextNode = temp.next;
-				temp.next = newNode;
+				Node<E> nextNode = searchedNode.next;
+				searchedNode.next = newNode;
 				newNode.next = nextNode;
-				
-				System.out.println("Node added successfully");
-				return;
-			 } 
-			 temp = temp.next;
-		 }
-	 }
+			}
+		}
+	 
+///* Insert node in the middle of LinkedList */
+//	 void pushAfter(E previous, E data) {
+//		 if(head == null) {
+//			 System.out.println("Node not found!!!");
+//			 return;
+//		 }
+//		 Node<E> temp = head;
+//		 while(temp != null) {
+//			 if(temp.data.equals(previous)) {
+//				Node<E> newNode = new Node(data);
+//				Node<E> nextNode = temp.next;
+//				temp.next = newNode;
+//				newNode.next = nextNode;
+//				
+//				System.out.println("Node added successfully");
+//				return;
+//			 } 
+//			 temp = temp.next;
+//		 }
+//	 }
+	 
+	 
 	 
 /* Get the size of linkedList*/
 	int size() {
