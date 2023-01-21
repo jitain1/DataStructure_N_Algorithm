@@ -129,23 +129,29 @@ public class LinkedList <E> {
 		return count;
 	}
 	
-/* Delete a node  */
-	void pop(E data) {
-		 if(head == null) {
-			 System.out.println("Empty LinkedList");
-			 return;
-		 }
-			
-		 Node<E> temp = head;
-		 while(temp != null) {
-			 if(temp.next.data.equals(data)) {
-				 temp.next = temp.next.next;
-				 System.out.println(data + " successfully deleted.");
-				 return;
-			 }
-				temp = temp.next;
-		 }
-		 System.out.println("Not Found!!!");
+	/* Delete a node */
+	public void pop(E data) {
+		if (head == null) {
+			System.out.println("Empty LinkedList");
+			return;
+		}
+		if (head.data.equals(data)) {
+			E popData = head.data;
+			head = head.next;
+			System.out.println(data + " successfully deleted.");
+			return;
+		}
+
+		Node<E> temp = head;
+		while (temp != tail) {
+			if (temp.next.data.equals(data)) {
+				temp.next = temp.next.next;
+				System.out.println(data + " successfully deleted.");
+				return;
+			}
+			temp = temp.next;
+		}
+		System.out.println("Not Found!!!");
 	}
 	
 }
