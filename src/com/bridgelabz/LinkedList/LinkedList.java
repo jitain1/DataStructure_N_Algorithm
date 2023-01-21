@@ -1,17 +1,25 @@
 package com.bridgelabz.LinkedList;
 
-public class LinkedList <E> {
-	
+public class LinkedList<E> {
+
 	private Node<E> head;
 	private Node<E> tail;
 
+	public Node<E> getHead() {
+		return head;
+	}
+
+	public Node<E> getTail() {
+		return tail;
+	}
+
 /* adding new head to linked list */
-	public void push(E value){
+	public void push(E value) {
 		Node<E> newNode = new Node(value);
-		if(head == null) {
+		if (head == null) {
 			head = newNode;
 			tail = newNode;
-		}else {
+		} else {
 			newNode.next = head;
 			head = newNode;
 		}
@@ -28,108 +36,86 @@ public class LinkedList <E> {
 			tail = newNode;
 		}
 	}
-/* Showing the whole linked-list*/
+
+/* Showing the whole linked-list */
 	public void display() {
 		Node<E> temp = head;
-		while(temp != null) {
+		while (temp != null) {
 			System.out.print(temp.data + "->");
 			temp = temp.next;
 		}
 		System.out.println();
 	}
-	
-/* delete the 1st node(head) of a linkedlist */	
+
+/* delete the 1st node(head) of a linkedlist */
 	public E pop() {
-		if(head == null){
+		if (head == null) {
 			return null;
-		}else {
+		} else {
 			E popData = head.data;
 			head = head.next;
 			return popData;
 		}
 	}
 	
-/* delete the last node(tail) of a linked list */	
+/* delete the last node(tail) of a linked list */
 	public E popLast() {
-		if(head == null)
+		if (head == null)
 			return null;
-			
+
 		E popLastData = tail.data;
 		Node<E> temp = head;
-		while(temp.next != tail) {
+		while (temp.next != tail) {
 			temp = temp.next;
 		}
 		tail = temp;
 		temp.next = null;
-		return popLastData;			
+		return popLastData;
 	}
 	
 /* Searching a node in linked list */
-	public  Node<E> search(E value) {
-		 if(head == null)
-			 return null;
-		 
-		 Node<E> temp = head;
-		 while(temp != null) {
-			 if(temp.data.equals(value))
-				 return temp;
-			 temp = temp.next;
-		 }		 
+	public Node<E> search(E value) {
+		if (head == null)
+			return null;
+
+		Node<E> temp = head;
+		while (temp != null) {
+			if (temp.data.equals(value))
+				return temp;
+			temp = temp.next;
+		}
 		return null;
 	}
-	 
-	 /* Insert a node after a node */	 
-		public void insertAfter(E searchData, E data) {
-			Node<E> searchedNode = search(searchData);
-			
-			if(searchedNode == null) {
-				System.out.println("Element not Found");
-			}else {
-				Node<E> newNode = new Node(data);
-				Node<E> nextNode = searchedNode.next;
-				searchedNode.next = newNode;
-				newNode.next = nextNode;
-			}
+	
+/* Insert a node after a node */
+	public void insertAfter(E searchData, E data) {
+		Node<E> searchedNode = search(searchData);
+
+		if (searchedNode == null) {
+			System.out.println("Element not Found.");
+		} else {
+			Node<E> newNode = new Node(data);
+			Node<E> nextNode = searchedNode.next;
+			searchedNode.next = newNode;
+			newNode.next = nextNode;
 		}
-	 
-///* Insert node in the middle of LinkedList */
-//	 void pushAfter(E previous, E data) {
-//		 if(head == null) {
-//			 System.out.println("Node not found!!!");
-//			 return;
-//		 }
-//		 Node<E> temp = head;
-//		 while(temp != null) {
-//			 if(temp.data.equals(previous)) {
-//				Node<E> newNode = new Node(data);
-//				Node<E> nextNode = temp.next;
-//				temp.next = newNode;
-//				newNode.next = nextNode;
-//				
-//				System.out.println("Node added successfully");
-//				return;
-//			 } 
-//			 temp = temp.next;
-//		 }
-//	 }
-	 
-	 
-	 
-/* Get the size of linkedList*/
-	int size() {
+	}
+	
+/* Get the size of linkedList */
+	public int size() {
 		int count = 0;
-		 if(head == null)
-			 return count;
+		if (head == null)
+			return count;
 		Node<E> temp = head;
-		while(temp != null) {
-			count ++;
+		while (temp != null) {
+			count++;
 			temp = temp.next;
 		}
 		System.out.println("Size of the linked list is : " + count);
 		return count;
 	}
-	
-	/* Delete a node */
+
+/* Delete a node */
 	public void pop(E data) {
 		if (head == null) {
 			System.out.println("Empty LinkedList");
@@ -151,7 +137,7 @@ public class LinkedList <E> {
 			}
 			temp = temp.next;
 		}
-		System.out.println("Not Found!!!");
+		System.out.println("Not Found!!!");
 	}
 	
 }
