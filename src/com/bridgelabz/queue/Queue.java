@@ -16,9 +16,10 @@ public class Queue<E> {
 		linkedList.display();
 	}
 	
-/* deleting item in queue (delete tail) */
-	public void dequeue() {
+	/* deleting item in queue (delete tail) */
+	public E dequeue() {
 		linkedList.pop();
+		return linkedList.getHead().data;
 	}
 	
 /*searching a value in queue*/
